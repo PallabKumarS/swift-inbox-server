@@ -28,6 +28,11 @@ try {
   execSync("npx prisma generate", { stdio: "inherit" });
   console.log("✅ Prisma client generated successfully!");
 
+  // Run prisma migrate dev
+  console.log("🔄 Running prisma migrate dev...");
+  execSync("npx prisma migrate dev", { stdio: "inherit" });
+  console.log("✅ Prisma migration completed successfully!");
+
   // Delete the generated schema file
   fs.unlinkSync(schemaPath);
   console.log("🗑️  Temporary schema.prisma deleted!");

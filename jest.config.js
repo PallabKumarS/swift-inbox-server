@@ -11,7 +11,7 @@ module.exports = {
   testMatch: ["**/tests/**/*.test.ts"], // run all .test.ts files in tests folder
   moduleFileExtensions: ["ts", "js", "json", "node"],
   clearMocks: true, // clears mocks between tests
-  collectCoverage: true, // enable coverage reports
+  collectCoverage: false, // enable coverage reports
   coverageDirectory: "coverage", // output folder
   coverageReporters: ["text", "lcov"], // standard reporters
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"], // optional: add setup files here

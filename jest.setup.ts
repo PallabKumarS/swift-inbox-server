@@ -1,9 +1,11 @@
 import { PrismaClient } from "@prisma/client";
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
 
 export const prisma = new PrismaClient({
   datasources: {
     db: {
-      url: "postgresql://postgress:@temppass1@localhost:5432/testDB", // test Postgres URL
+      url: process.env.DATABASE_URL, // test Postgres URL
     },
   },
 });
