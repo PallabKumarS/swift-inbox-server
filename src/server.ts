@@ -2,6 +2,7 @@ import app from "./app";
 import config from "./config";
 import type { Server } from "node:http";
 import { initWebSocket } from "./utils/webSocket";
+import { errorLogger } from "./middlewares/logger";
 
 let server: Server;
 
@@ -17,6 +18,7 @@ async function main() {
     console.log("✅ WebSocket server is running");
   } catch (err) {
     console.log(err);
+    errorLogger.error(err);
   }
 }
 
