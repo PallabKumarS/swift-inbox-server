@@ -7,6 +7,7 @@ import type { TErrorSources } from "../errors/error.interface";
 import jwt from "jsonwebtoken";
 import handleZodError from "../errors/zodError";
 import { AppError } from "../errors/appError";
+import { errorLogger } from "./logger";
 
 const globalErrorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   //setting default values
@@ -70,6 +71,8 @@ const globalErrorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
       },
     ];
   }
+
+  errorLogger.error(message, err);
 
   //ultimate return
   res.status(statusCode).json({
