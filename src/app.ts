@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // all routes here
-app.use("/api/v1", rootRoute);
+app.use("/api", rootRoute);
 
 app.get("/", (_req: Request, res: Response) => {
   res.send(`
