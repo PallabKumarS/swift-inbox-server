@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: swift-inbox-server
+    working_dir: /app
+    volumes:
+      - .:/app # bind mount your project for live reload
+      - node_modules:/app/node_modules # keep node_modules in a volume
+      - logs:/app/logs # match your devcontainer logs volume
+    ports:
+      - "5000:5000" # map local port to container
+    env_file:
+      - .env
+    command: npm run dev # override default CMD to run in dev mode
+
+volumes:
+  node_modules:
+  logs:
