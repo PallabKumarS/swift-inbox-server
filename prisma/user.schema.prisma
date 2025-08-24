@@ -1,11 +1,14 @@
 model User {
     id          String    @id @default(uuid())
+    password    String
     userEmail   String    @unique
-    displayName String?
+    displayName String
     tempMail    String?
     role        String    @default("user")
     address     String    @default("N/A")
     country     String    @default("N/A")
     dateOfBirth DateTime?
     phoneNumber String    @default("N/A")
+
+    @@map("users")
 }

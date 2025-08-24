@@ -3,13 +3,7 @@ import path from "node:path";
 
 // Function to create a module with dynamic files
 const createModule = (moduleName: string): void => {
-  const baseDir = path.join(
-    __dirname,
-    "../",
-    "src/",
-    "modules",
-    moduleName
-  );
+  const baseDir = path.join(__dirname, "../", "src/", "modules", moduleName);
   const testDir = path.join(__dirname, "../", "src/", "tests", moduleName);
 
   // List of files to be created
@@ -111,8 +105,8 @@ export const ${capitalize(moduleName)}Validation = {
       } else if (file.endsWith(".service.ts")) {
         content = `
         /* eslint-disable @typescript-eslint/no-explicit-any */
-        import prisma from '@prisma/client';
-        import httpStatus from 'http-status';
+        import prisma from '../../helpers/prismaClient';
+        import httpStatus from 'http-status-codes';
 
 const getAll${capitalize(moduleName)}FromDB = async ():Promise<any> => {
   const result = await prisma.${moduleName}.findMany();
