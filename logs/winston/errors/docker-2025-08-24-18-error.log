@@ -1,0 +1,102 @@
+Sun Aug 24 2025 18:56:17 } [DOCKER] error: 
+Invalid `prisma.user.update()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:25:36
+
+  22   id: string,
+  23   data: Partial<User>
+  24 ): Promise<User> => {
+→ 25   const result = await prisma.user.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update. 
+Invalid `prisma.user.update()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:25:36
+
+  22   id: string,
+  23   data: Partial<User>
+  24 ): Promise<User> => {
+→ 25   const result = await prisma.user.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+Sun Aug 24 2025 18:56:17 } [DOCKER] error: 
+Invalid `prisma.user.delete()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:36:42
+
+  33 
+  34 // delete user by id
+  35 const deleteByIdFromDB = async (id: string): Promise<User> => {
+→ 36   const result = await prisma.user.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete. 
+Invalid `prisma.user.delete()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:36:42
+
+  33 
+  34 // delete user by id
+  35 const deleteByIdFromDB = async (id: string): Promise<User> => {
+→ 36   const result = await prisma.user.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+Sun Aug 24 2025 18:58:47 } [DOCKER] error: 
+Invalid `prisma.user.update()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:25:36
+
+  22   id: string,
+  23   data: Partial<User>
+  24 ): Promise<User> => {
+→ 25   const result = await prisma.user.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update. 
+Invalid `prisma.user.update()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:25:36
+
+  22   id: string,
+  23   data: Partial<User>
+  24 ): Promise<User> => {
+→ 25   const result = await prisma.user.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+Sun Aug 24 2025 18:58:47 } [DOCKER] error: 
+Invalid `prisma.user.delete()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:36:42
+
+  33 
+  34 // delete user by id
+  35 const deleteByIdFromDB = async (id: string): Promise<User> => {
+→ 36   const result = await prisma.user.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete. 
+Invalid `prisma.user.delete()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:36:42
+
+  33 
+  34 // delete user by id
+  35 const deleteByIdFromDB = async (id: string): Promise<User> => {
+→ 36   const result = await prisma.user.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.
+Sun Aug 24 2025 18:59:48 } [DOCKER] error: 
+Invalid `prisma.user.update()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:25:36
+
+  22   id: string,
+  23   data: Partial<User>
+  24 ): Promise<User> => {
+→ 25   const result = await prisma.user.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update. 
+Invalid `prisma.user.update()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:25:36
+
+  22   id: string,
+  23   data: Partial<User>
+  24 ): Promise<User> => {
+→ 25   const result = await prisma.user.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+Sun Aug 24 2025 18:59:48 } [DOCKER] error: 
+Invalid `prisma.user.delete()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:36:42
+
+  33 
+  34 // delete user by id
+  35 const deleteByIdFromDB = async (id: string): Promise<User> => {
+→ 36   const result = await prisma.user.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete. 
+Invalid `prisma.user.delete()` invocation in
+D:\Web Development\Personal Projects\swift-inbox\server\src\modules\user\user.service.ts:36:42
+
+  33 
+  34 // delete user by id
+  35 const deleteByIdFromDB = async (id: string): Promise<User> => {
+→ 36   const result = await prisma.user.delete(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a delete.

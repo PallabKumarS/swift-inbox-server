@@ -1,32 +1,56 @@
 import request from "supertest";
 import app from "../src/app";
-import { prisma } from "../jest.setup";
+import prisma from "../src/helpers/prismaClient";
 
-describe("User API", () => {
-  it("should create a new user", async () => {
-    const res = await request(app).post("/api/v1/users").send({
+let userId: string;
+
+beforeAll(async () => {
+  // Clean database
+  await prisma.user.deleteMany();
+
+  // Create test user
+  const user = await prisma.user.create({
+    data: {
+      password: "testpass",
       userEmail: "test@example.com",
-      tempMail: "temp@example.com",
-    });
-
-    expect(res.status).toBe(201);
-
-    const user = await prisma.user.findUnique({
-      where: { userEmail: "test@example.com" },
-    });
-    expect(user).not.toBeNull();
+      displayName: "Test User",
+    },
   });
 
-  it("should return all users", async () => {
-    await prisma.user.create({
-      data: {
-        userEmail: "all@test.com",
-        tempMail: "alltemp@test.com",
-      },
-    });
+  console.log("user", user);
 
-    const res = await request(app).get("/api/v1/users");
+  userId = user.id;
+});
+
+afterAll(async () => {
+  await prisma.$disconnect();
+});
+
+describe("User API", () => {
+  it("should get all users", async () => {
+    const res = await request(app).get("/api/users");
     expect(res.status).toBe(200);
-    expect(res.body.length).toBeGreaterThanOrEqual(1);
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body[0].id).toBe(userId);
+  });
+
+  it("should get a user by id", async () => {
+    const res = await request(app).get(`/api/users/${userId}`);
+    expect(res.status).toBe(200);
+    expect(res.body.id).toBe(userId);
+  });
+
+  it("should update a user by id", async () => {
+    const res = await request(app)
+      .patch(`/api/users/${userId}`)
+      .send({ displayName: "Updated Name" });
+    expect(res.status).toBe(200);
+    expect(res.body.displayName).toBe("Updated Name");
+  });
+
+  it("should delete a user by id", async () => {
+    const res = await request(app).delete(`/api/users/${userId}`);
+    expect(res.status).toBe(200);
+    expect(res.body.id).toBe(userId);
   });
 });
