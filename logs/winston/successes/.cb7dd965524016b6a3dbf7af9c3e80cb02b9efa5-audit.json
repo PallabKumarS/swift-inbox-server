@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Web Development\\Personal Projects\\swift-inbox\\server\\logs\\winston\\successes\\.cb7dd965524016b6a3dbf7af9c3e80cb02b9efa5-audit.json",
+    "files": [
+        {
+            "date": 1756039360512,
+            "name": "D:\\Web Development\\Personal Projects\\swift-inbox\\server\\logs\\winston\\successes\\docker-2025-08-24-18-42-40-success.log",
+            "hash": "b3e641b102063b8e562b5929f337694e93b88732a2fdfe9233514eca14270b1d"
+        },
+        {
+            "date": 1756039382761,
+            "name": "D:\\Web Development\\Personal Projects\\swift-inbox\\server\\logs\\winston\\successes\\docker-2025-08-24-18-43-02-success.log",
+            "hash": "ef47710410e96d8ed2eaff139d1a7b1a659236fbc13385ec83aa9e4acb01802b"
+        }
+    ],
+    "hashType": "sha256"
+}

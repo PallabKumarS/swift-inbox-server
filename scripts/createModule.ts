@@ -60,7 +60,7 @@ export const ${capitalize(moduleName)}Routes = router;`;
 import { ${capitalize(moduleName)}Service } from "./${moduleName}.service";
 import catchAsync from "../../utils/catchAsync";
 import sendResponse from "../../utils/sendResponse";
-import httpStatus from 'http-status';
+import { StatusCodes } from "http-status-codes";
 
 const getAll${capitalize(
           moduleName
@@ -106,7 +106,7 @@ export const ${capitalize(moduleName)}Validation = {
         content = `
         /* eslint-disable @typescript-eslint/no-explicit-any */
         import prisma from '../../helpers/prismaClient';
-        import httpStatus from 'http-status-codes';
+    import { StatusCodes } from "http-status-codes";
 
 const getAll${capitalize(moduleName)}FromDB = async ():Promise<any> => {
   const result = await prisma.${moduleName}.findMany();

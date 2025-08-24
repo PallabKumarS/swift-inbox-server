@@ -1,19 +1,13 @@
-import httpStatus from "http-status-codes";
 import prisma from "../../helpers/prismaClient";
 import type { User } from "@prisma/client";
 
+// get all users
 const getAllUserFromDB = async (): Promise<User[] | []> => {
   const result = await prisma.user.findMany();
   return result;
 };
 
-const createUserInDB = async (data: User): Promise<User> => {
-  const result = await prisma.user.create({
-    data,
-  });
-  return result;
-};
-
+// get user by id
 const getUserByIdFromDB = async (id: string): Promise<User | null> => {
   const result = await prisma.user.findUnique({
     where: {
@@ -23,6 +17,7 @@ const getUserByIdFromDB = async (id: string): Promise<User | null> => {
   return result;
 };
 
+// update user by id
 const updateUserByIdFromDB = async (
   id: string,
   data: Partial<User>
@@ -36,6 +31,7 @@ const updateUserByIdFromDB = async (
   return result;
 };
 
+// delete user by id
 const deleteByIdFromDB = async (id: string): Promise<User> => {
   const result = await prisma.user.delete({
     where: {
@@ -48,7 +44,6 @@ const deleteByIdFromDB = async (id: string): Promise<User> => {
 export const UserService = {
   getAllUserFromDB,
   getUserByIdFromDB,
-  createUserInDB,
   updateUserByIdFromDB,
   deleteByIdFromDB,
 };
